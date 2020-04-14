@@ -1,15 +1,15 @@
 # COVID-19-Challenges
-Combatiendo el aburrimiento.
+Bouncing Ball. Para este reto solo debemos emular una pelota rebotando.
 
 ## Instrucciones
- - El repositorio tendrá diferentes ramas con diferentes retos.
- - Crea un fork de este repositorio y la respectiva rama para la solución de cada reto. 
- - Guarda tu solición dentro de una carpeta con el nombre de tu usuario github para identificarte.
- - Puedes utilizar cualquier tecnología para desarrollarlos.
- - Una vez hayas completado el reto, sube tus cambios.
- - Realiza un Merge Request para añadirlos al repositorio.
- - Será divertido ver las diferentes soluciones que planteamos al mismo problema.
- - Si tienes un reto que proponer, puedes agregarlo.
+ - Utiliza tus conocimientos en css para simular una pelota rebotando.
+ - Ayúdate de la propiedad @keyframes.
+ - Intenta que la propuesta sea adaptable a cualquier dispositivo.
+ - Recuerda que en internet hay miles de soluciones pero la finalidad de este reto es que muestres tu capacidad de desarrollo y creatividad.
+
+Para información y buenas prácticas puede consultar el siguiente enlace: 
+https://www.w3schools.com/css/css3_animations.asp
+
 
  RECUERDA: No existen respuestas incorrectas, solo ganas de hechar código para pasar el rato!
 
