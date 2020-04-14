@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --ball-dimension: 12vmin;
+    --ball-shadow: calc(var(--ball-dimension)/2);
+    --rotate: 30;
+    --animate: 8s linear .1s forwards;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: rgb(94, 215, 252);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#space {
+    height: 100vmin;
+    width: 100vmin;
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    z-index: 1;
+}
+
+#court {
+    width: 65vmin;
+    position: absolute;
+    left: 50%;
+    top: 36%;
+    transform: translate(-50%, -36%);
+}
+
+#ball {
+    width: var(--ball-dimension);
+    height: var(--ball-dimension);
+    background-image: url(./img/basketball.png);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    animation: var(--animate) shoot;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#fence {
+    background-image: url(./img/fence.svg);
+    width: 100%;
+    position: absolute;
+    height: 25vh;
+    bottom: 45vmin;
+    background-repeat-x: repeat;
+    background-size: contain;
+}
+
+#shadow {
+    width: var(--ball-dimension);
+    height: calc(var(--ball-shadow)/2);
+    background-color: #656565;
+    border-radius: 50%;
+    position: absolute;
+    bottom: calc(var(--ball-shadow)/-4);
+    z-index: 1;
+    filter: blur(1px);
+    opacity: .5;
+    animation: var(--animate) shadow;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+#ball,
+#shadow {
+    left: 50%;
+    bottom: 10%;
+}
+
+#floor {
+    z-index: 0;
+    background: rgb(46, 117, 57);
+    height: 45%;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    border-top: solid 4px white;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(-50%) scale(1) rotate(0);
+        bottom: 10%;
+    }
+
+    15% {
+        transform: translateX(-50%) scale(calc(1/1.5)) rotate(calc(var(--rotate) * 20deg));
+        bottom: 90vmin
+    }
+
+    20% {
+        transform: translateX(-50%) scale(calc(1/2)) rotate(calc(var(--rotate) * 25deg));
+        bottom: 85vmin
+    }
+
+    25% {
+        transform: translateX(-50%) scale(calc(1/2.5)) rotate(calc(var(--rotate) * 30deg));
+        bottom: 80vmin
+    }
+
+    40% {
+        transform: translateX(-50%) scale(.4) rotate(calc(var(--rotate) * 35deg));
+        bottom: 34vmin
+    }
+
+    50% {
+        transform: translateX(-50%) scale(.5) rotate(calc(var(--rotate) * 25deg));
+        bottom: 40vmin
+    }
+
+    55% {
+        transform: translateX(-50%) scale(.5) rotate(calc(var(--rotate) * 22deg));
+        bottom: 32vmin
+    }
+
+    60% {
+        transform: translateX(-50%) scale(.54) rotate(calc(var(--rotate) * 20deg));
+        bottom: 35vmin
+    }
+
+    65% {
+        transform: translateX(-50%) scale(.56) rotate(calc(var(--rotate) * 18deg));
+        bottom: 28vmin
+    }
+
+    100% {
+        transform: translateX(-50%) scale(.7) rotate(calc(var(--rotate) * 0deg));
+        bottom: 20vmin
+    }
+}
+
+@keyframes shadow {
+    0% {
+        transform: translateX(-50%) scale(1);
+        bottom: 10%;
+    }
+
+    15% {
+        transform: translateX(-50%) scale(1.2);
+    }
+
+    20% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: .1;
+    }
+
+    25% {
+        transform: translateX(-50%) scale(1.2);
+        bottom: 37vmin;
+        opacity: .3;
+        filter: blur(3px);
+    }
+
+    40% {
+        transform: translateX(-50%) scale(.45);
+        bottom: 36vmin;
+        filter: blur(1px);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(.5);
+        bottom: 35vmin;
+        filter: blur(1.3px);
+        opacity: .3;
+    }
+
+    55% {
+        transform: translateX(-50%) scale(.52);
+        filter: blur(1.2x);
+        opacity: .4;
+        bottom: 34vmin;
+    }
+
+    60% {
+        transform: translateX(-50%) scale(.54);
+        bottom: 31vmin
+    }
+
+    65% {
+        transform: translateX(-50%) scale(.56);
+        bottom: 28vmin;
+        opacity: .4;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(.8);
+        bottom: 21vmin;
+        opacity: .5
+    }
+}
